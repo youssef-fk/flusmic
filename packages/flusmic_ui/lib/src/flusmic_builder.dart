@@ -19,8 +19,7 @@ class FlusmicControllerState {
 ///Class for control FlusmicBuilder
 class FlusmicController extends StateNotifier<FlusmicControllerState> {
   ///Constructor
-  FlusmicController()
-      : super(FlusmicControllerState(DateTime.now().toString()));
+  FlusmicController() : super(FlusmicControllerState(DateTime.now().toString()));
 
   ///Repeat an action
   void repeat() {
@@ -73,8 +72,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
   RequestState _currentState = RequestState.uninitialized();
   final _flusmicController = FlusmicController();
 
-  FlusmicController get flusmicController =>
-      widget.controller ?? _flusmicController;
+  FlusmicController get flusmicController => widget.controller ?? _flusmicController;
 
   @override
   void initState() {
@@ -108,8 +106,7 @@ class _FlusmicBuilderState extends State<FlusmicBuilder> {
       context,
       _currentState.when(
         error: (error) => FlusmicStatus.error(error),
-        loaded: (dynamic result, _, __) =>
-            FlusmicStatus.loaded(result as FlusmicResponse),
+        loaded: (dynamic result, _, __) => FlusmicStatus.loaded(result as FlusmicResponse),
         loading: () => FlusmicStatus.loading(),
         uninitialized: () => FlusmicStatus.init(),
       ),
