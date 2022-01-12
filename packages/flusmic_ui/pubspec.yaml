@@ -5,8 +5,6 @@ repository: https://github.com/PixelaGt/flusmic
 issue_tracker: https://github.com/PixelaGt/flusmic/issues
 homepage: https://github.com/PixelaGt/flusmic
 
-publish_to: none
-
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
@@ -15,7 +13,9 @@ dependencies:
     sdk: flutter
 
   common_bloc:
-    path: ../common_bloc
+    git:
+      url: git@github.com:youssef-fk/common_bloc.git
+      ref: a80e3469ea55aaad915a3eef338df156b1065161
 
   extended_image: ^6.0.1
   flusmic: ^3.1.3
